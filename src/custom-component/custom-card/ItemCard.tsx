@@ -6,8 +6,8 @@ interface CardItem {
   price: string;
   description: string;
   image: string;
-  id: string;
-  onClick: () => void;
+  id?: string;
+  onClick?: () => void;
 }
 
 const ItemCard: React.FC<CardItem> = ({

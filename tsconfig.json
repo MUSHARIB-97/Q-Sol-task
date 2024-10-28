@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
+    "module": "Node16", // add this line
+    "moduleResolution": "node16",
     "jsx": "react",
     "esModuleInterop": true,
-    // ...
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
-    // ...
   }
 }

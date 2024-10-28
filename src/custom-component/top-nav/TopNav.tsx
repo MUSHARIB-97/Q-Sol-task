@@ -31,7 +31,7 @@ const TopNavbar: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#eeedf2] h-16 text-white flex justify-between items-center">
+    <div className="bg-[#eeedf2] h-16 text-white flex justify-between items-center border-b border-gray-700">
       <div className="w-2/12 pl-4">
         <img src={logo} alt="" className="object-contain w-full h-full" />
       </div>

@@ -23,7 +23,7 @@ const ShadTable: React.FC<TableData> = ({ columns, rows }) => {
       <TableHeader>
         <TableRow>
           {columns.map((column, index) => (
-            <TableCell className="border border-blue-400" key={index}>
+            <TableCell className="border border-blue-400 h-6" key={index}>
               {column.header}
             </TableCell>
           ))}
@@ -33,7 +33,7 @@ const ShadTable: React.FC<TableData> = ({ columns, rows }) => {
         {rows.map((row, rowIndex) => (
           <TableRow key={rowIndex}>
             {columns.map((column, colIndex) => (
-              <TableCell className="border border-blue-400" key={colIndex}>
+              <TableCell className="border border-blue-400 h-12" key={colIndex}>
                 {row[column.accessor]}
               </TableCell>
             ))}

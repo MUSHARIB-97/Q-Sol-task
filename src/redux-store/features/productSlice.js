@@ -34,16 +34,16 @@ export const ProductSlice = createSlice({
     });
     builder.addCase(UserHistoryList.pending, (state, { payload }) => {
       state.loading = "pending";
-      console.log("pending");
+      // console.log("pending");
     });
     builder.addCase(UserHistoryList.fulfilled, (state, { payload }) => {
       state.loading = "idle";
       state.historyList = payload;
-      console.log("payload==>", payload);
+      // console.log("payload==>", payload);
     });
     builder.addCase(UserHistoryList.rejected, (state, { payload }) => {
       state.loading = "rejected";
-      console.log("Rejected");
+      // console.log("Rejected");
     });
   },
 });
@@ -63,7 +63,7 @@ export const UserHistoryList = createAsyncThunk(
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/posts/1/comments"
     );
-    console.log("Thunk==>", response.data);
+    // console.log("Thunk==>", response.data);
     return response.data;
   }
 );

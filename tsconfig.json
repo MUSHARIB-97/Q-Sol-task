@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "module": "Node16", // add this line
+    "module": "Node16",
     "moduleResolution": "node16",
     "jsx": "react",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

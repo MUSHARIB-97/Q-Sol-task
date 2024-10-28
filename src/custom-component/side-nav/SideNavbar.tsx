@@ -16,6 +16,16 @@ const SideNavbar: React.FC = () => {
           >
             Home
           </NavLink>
+          <NavLink
+            to="/user-history"
+            className={({ isActive }) =>
+              `block p-2 rounded hover:cursor-pointer ${
+                isActive ? "bg-gray-600" : ""
+              }`
+            }
+          >
+            User History
+          </NavLink>
         </div>
         <div className="text-md">
           <p className="pl-4 font-semibold text-lg border-b">Categories</p>

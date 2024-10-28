@@ -3,6 +3,7 @@ import Home from "@/pages/home/Home";
 import Jewelery from "@/pages/categories/JewelryCat";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import UserHistory from "@/pages/transaction-history/UserHistory";
 
 const AppRoute: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const AppRoute: React.FC = () => {
       <Route path="/" element={<Home />} />
       <Route path="/men-clothing" element={<Users />} />
       <Route path="/jewelery" element={<Jewelery />} />
+      <Route path="/user-history" element={<UserHistory />} />
     </Routes>
   );
 };

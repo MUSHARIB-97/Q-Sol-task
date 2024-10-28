@@ -44,7 +44,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      <div className="m-4 flex-1">
+      <div className="m-4 flex-1 w-full overflow-hidden">
         <div className="w-full md:ml-20">
           <div className="my-4 w-80 h-8 border-b-2 border-l-2 border-black flex justify-center items-center">
             <input

@@ -1,10 +1,3 @@
-// import {
-//   Table,
-//   TableHeader,
-//   TableRow,
-//   TableCell,
-//   TableBody,
-// } from "@/components/ui/table";
 import {
   Table,
   TableBody,

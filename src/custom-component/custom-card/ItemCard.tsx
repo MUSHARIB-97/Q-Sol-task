@@ -1,4 +1,4 @@
-import { Card, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader } from "@/components/ui/card.js";
 import React from "react";
 
 interface CardItem {

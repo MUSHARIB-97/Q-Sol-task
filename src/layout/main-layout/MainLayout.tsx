@@ -1,5 +1,5 @@
-import SideNavbar from "@/custom-component/side-nav/SideNavbar";
-import TopNavbar from "@/custom-component/top-nav/TopNav";
+import SideNavbar from "@/custom-component/side-nav/SideNavbar.js";
+import TopNavbar from "@/custom-component/top-nav/TopNav.js";
 import React, { ReactNode } from "react";
 
 interface LayoutProps {

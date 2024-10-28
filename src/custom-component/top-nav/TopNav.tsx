@@ -1,10 +1,10 @@
 // TopNavbar.tsx
 import React, { useState } from "react";
 import logo from "./../../assets/images/logo.svg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import CustomModal from "../custom-modal/CustomModal";
 import axios from "axios";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar.js";
+import CustomModal from "../custom-modal/CustomModal.js";
+import { Button } from "@/components/ui/button.js";
 
 const TopNavbar: React.FC = () => {
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);

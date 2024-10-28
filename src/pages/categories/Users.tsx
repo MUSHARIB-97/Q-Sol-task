@@ -1,8 +1,8 @@
-import Layout from "@/layout/main-layout/MainLayout";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { productList } from "@/redux-store/features/productSlice";
-import ItemCard from "@/custom-component/custom-card/ItemCard";
+import { productList } from "./../../redux-store/features/productSlice.js";
+import Layout from "@/layout/main-layout/MainLayout.js";
+import ItemCard from "@/custom-component/custom-card/ItemCard.js";
 
 const Users: React.FC = () => {
   const dispatch = useDispatch();

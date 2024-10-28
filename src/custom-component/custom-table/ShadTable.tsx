@@ -1,10 +1,17 @@
+// import {
+//   Table,
+//   TableHeader,
+//   TableRow,
+//   TableCell,
+//   TableBody,
+// } from "@/components/ui/table";
 import {
   Table,
+  TableBody,
+  TableCell,
   TableHeader,
   TableRow,
-  TableCell,
-  TableBody,
-} from "@/components/ui/table";
+} from "@/components/ui/table.js";
 import React from "react";
 
 interface Column {

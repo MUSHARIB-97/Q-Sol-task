@@ -1,9 +1,10 @@
-import ItemCard from "@/custom-component/custom-card/ItemCard";
-import Layout from "@/layout/main-layout/MainLayout";
 import {
   productList,
   searchProducts,
-} from "@/redux-store/features/productSlice";
+} from "./../../redux-store/features/productSlice.js";
+
+import ItemCard from "@/custom-component/custom-card/ItemCard.js";
+import Layout from "@/layout/main-layout/MainLayout.js";
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

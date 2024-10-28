@@ -1,5 +1,5 @@
-import ShadTable from "@/custom-component/custom-table/ShadTable";
-import Layout from "@/layout/main-layout/MainLayout";
+import ShadTable from "@/custom-component/custom-table/ShadTable.js";
+import Layout from "@/layout/main-layout/MainLayout.js";
 import React from "react";
 
 const UserHistory = () => {

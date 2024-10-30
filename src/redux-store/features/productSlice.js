@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+
+let searchTimeout;
+
 export const ProductSlice = createSlice({
   name: "ProductSlice",
   initialState: {
@@ -11,39 +14,46 @@ export const ProductSlice = createSlice({
   reducers: {
     searchProducts: (state, action) => {
       const query = action.payload.toLowerCase();
-      state.filteredProducts = state.product.filter((item) =>
-        item.category.toLowerCase().includes(query)
+      state.filteredProducts = state.product.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query) &&
+          item.category === "men's clothing"
       );
+    },
+    debounceSearchProducts: (state, action) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        const query = action.payload.toLowerCase();
+        state.filteredProducts = state.product.filter((item) =>
+          item.title.toLowerCase().includes(query)
+        );
+      }, 300); // Delay of 300ms
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(productList.pending, (state, { payload }) => {
+    builder.addCase(productList.pending, (state) => {
       state.loading = "pending";
-      // console.log("productlist is pending");
     });
     builder.addCase(productList.fulfilled, (state, { payload }) => {
       state.loading = "idle";
       state.product = payload;
-      state.filteredProducts = payload; // Initialize filteredProducts with full list
-      // console.log("productlist is fulfillted ==>", payload);
+      // Initialize filteredProducts with only "men's clothing" products
+      state.filteredProducts = payload.filter(
+        (item) => item.category === "men's clothing"
+      );
     });
-    builder.addCase(productList.rejected, (state, { payload }) => {
+    builder.addCase(productList.rejected, (state) => {
       state.loading = "rejected";
-      state.product = payload;
-      // console.log("productlist is rejected");
     });
-    builder.addCase(UserHistoryList.pending, (state, { payload }) => {
+    builder.addCase(UserHistoryList.pending, (state) => {
       state.loading = "pending";
-      // console.log("pending");
     });
     builder.addCase(UserHistoryList.fulfilled, (state, { payload }) => {
       state.loading = "idle";
       state.historyList = payload;
-      // console.log("payload==>", payload);
     });
-    builder.addCase(UserHistoryList.rejected, (state, { payload }) => {
+    builder.addCase(UserHistoryList.rejected, (state) => {
       state.loading = "rejected";
-      // console.log("Rejected");
     });
   },
 });
@@ -53,7 +63,6 @@ export const productList = createAsyncThunk(
   async () => {
     const response = await axios.get("https://fakestoreapi.com/products");
     return response.data;
-    // return response;
   }
 );
 
@@ -63,11 +72,10 @@ export const UserHistoryList = createAsyncThunk(
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/posts/1/comments"
     );
-    // console.log("Thunk==>", response.data);
     return response.data;
   }
 );
 
-export const { searchProducts } = ProductSlice.actions;
+export const { searchProducts, debounceSearchProducts } = ProductSlice.actions;
 
 export default ProductSlice.reducer;
